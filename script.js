@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (radioNo.checked) {
             responseMessage.textContent = 'Ha pulsado “no” osea que ademas de manco usted es mentiroso';
         } else if (radioSi.checked) {
-            responseMessage.textContent = ''; // Si se selecciona "Sí", no se muestra ningún mensaje.
+            // ¡Nuevo mensaje al seleccionar "Sí"!
+            responseMessage.textContent = 'O sea además de manco usted es sincero al seleccionar “Si”, felicitaciones aceptarlo es el primer paso!';
         }
     }
 
