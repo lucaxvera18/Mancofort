@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Permanent+Marker&display=swap');
 
-/* ESTILOS GLOBALES Y DE CONTENEDOR (mismos que antes) */
+/* ESTILOS GLOBALES Y DE CONTENEDOR */
 body {
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Permanent Marker', cursive; /* Fuente general */
+    font-family: 'Permanent Marker', cursive;
     overflow: hidden;
+    /* Compatibilidad de fondo */
+    background-attachment: fixed; 
 }
 
 .background-pattern {
@@ -127,7 +129,8 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 1.5em;
+    /* Ajustado a EM para que escale mejor */
+    font-size: 1.5em; 
     font-weight: bold;
     color: #000;
     position: relative;
@@ -141,7 +144,8 @@ body {
 }
 
 .custom-radio {
-    width: 30px;
+    /* Ajustado a un tamaño fijo que se ve bien en móvil */
+    width: 30px; 
     height: 30px;
     border: 4px solid #000;
     border-radius: 50%;
@@ -164,15 +168,70 @@ body {
     display: block;
 }
 
-/* --- ESTILO DEL MENSAJE (MODIFICADO) --- */
+/* --- ESTILO DEL MENSAJE --- */
 .message {
-    font-size: 1.2em; /* Reducido un poco para que quepa bien en la fuente pixelada */
-    font-weight: normal; /* Ya no necesitamos bold con esta fuente */
+    font-size: 1.2em;
+    font-weight: normal;
     color: #000;
     min-height: 50px;
     padding-top: 10px;
-    
-    /* APLICACIÓN DE LA NUEVA FUENTE */
     font-family: 'Press Start 2P', cursive;
-    line-height: 1.5; /* Mejoramos la legibilidad */
+    line-height: 1.5;
+    /* Centrado de texto */
+    text-align: center;
+}
+
+/* ======================================================= */
+/* === AJUSTES DE RESPONSIVIDAD (MEDIA QUERIES) === */
+/* ======================================================= */
+
+@media (max-width: 500px) {
+    /* Pantallas más pequeñas (móviles) */
+
+    .container {
+        /* Usar todo el ancho disponible, sin padding extra */
+        width: 95%;
+        padding: 10px;
+    }
+
+    .header {
+        /* Reducir el tamaño de la fuente del título */
+        font-size: 0.8em;
+        padding: 5px;
+    }
+
+    .question {
+        /* Reducir el tamaño de la fuente de la pregunta */
+        font-size: 1.2em;
+    }
+    
+    .police-character-area {
+        /* Reducir el tamaño del contenedor de la imagen en móvil */
+        width: 200px; 
+        height: 250px;
+        margin: 0 auto 15px auto;
+    }
+
+    .taberna-gamer-logo {
+        /* Reducir ligeramente el logo en móvil */
+        font-size: 0.6em;
+    }
+
+    .options {
+        /* Apilar los botones si el espacio es muy reducido (opcional, pero mejora) */
+        flex-direction: column;
+        gap: 15px;
+        align-items: center; /* Centrar los items apilados */
+        margin-bottom: 20px;
+    }
+    
+    .radio-label {
+        /* Reducir el tamaño de la fuente de las opciones */
+        font-size: 1.2em;
+    }
+
+    .message {
+        /* Reducir el tamaño del texto del mensaje */
+        font-size: 0.9em;
+    }
 }
