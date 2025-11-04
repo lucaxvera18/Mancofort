@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Permanent Marker', cursive; /* Fuente general */
     overflow: hidden;
 }
 
@@ -66,24 +66,22 @@ body {
     line-height: 1.2;
 }
 
-/* --- ESTILOS DE IMAGEN Y LOGO (AJUSTADOS) --- */
+/* --- ESTILOS DE IMAGEN Y LOGO --- */
 .police-character-area {
-    /* Ajustes de tamaño para que la imagen quepa mejor */
-    width: 250px;  /* Aumentado el ancho */
-    height: 300px; /* Aumentado el alto */
+    width: 250px;
+    height: 300px;
     margin: 0 auto 20px auto;
     border: 2px solid #000;
-    background-color: #000; /* Mantenemos el fondo negro como en tu original */
+    background-color: #000;
     position: relative;
-    overflow: hidden; /* Esto asegura que si algo se desborda, no se vea */
+    overflow: hidden;
     box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
-    display: flex; /* Usamos flexbox para centrar la imagen */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .character-wrapper {
-    /* Este div ahora solo actúa como un contenedor flexible si es necesario, pero la imagen se centra directamente */
     width: 100%;
     height: 100%;
     display: flex;
@@ -95,17 +93,17 @@ body {
     max-width: 100%;
     max-height: 100%;
     display: block;
-    object-fit: contain; /* Esto asegura que la imagen se escala sin recortarse, manteniendo su relación de aspecto */
-    background-color: transparent; /* Asegura que no haya un fondo blanco si la imagen tiene transparencia */
+    object-fit: contain;
+    background-color: transparent;
 }
 
 .taberna-gamer-logo {
     position: absolute;
     top: 5px;
     left: 50%;
-    transform: translateX(-50%) rotate(5deg); /* Centrado y rotado */
+    transform: translateX(-50%) rotate(5deg);
     
-    background-color: #ff0000; /* Fondo rojo del logo */
+    background-color: #ff0000;
     color: #fff;
     font-size: 0.8em;
     padding: 3px 10px;
@@ -116,7 +114,7 @@ body {
     z-index: 20;
 }
 
-/* --- ESTILOS DE BOTONES Y MENSAJES (igual que antes) --- */
+/* --- ESTILOS DE BOTONES --- */
 .options {
     display: flex;
     justify-content: center;
@@ -166,10 +164,15 @@ body {
     display: block;
 }
 
+/* --- ESTILO DEL MENSAJE (MODIFICADO) --- */
 .message {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.2em; /* Reducido un poco para que quepa bien en la fuente pixelada */
+    font-weight: normal; /* Ya no necesitamos bold con esta fuente */
     color: #000;
     min-height: 50px;
     padding-top: 10px;
+    
+    /* APLICACIÓN DE LA NUEVA FUENTE */
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5; /* Mejoramos la legibilidad */
 }
