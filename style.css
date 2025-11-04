@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Permanent+Marker&display=swap');
 
+/* ESTILOS GLOBALES Y DE CONTENEDOR (igual que antes) */
 body {
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Permanent Marker', cursive; /* Para el texto principal, simula el estilo */
-    overflow: hidden; /* Para que el patrón de fondo no genere scroll */
+    font-family: 'Permanent Marker', cursive;
+    overflow: hidden;
 }
 
-/* Patrón de fondo (simulando las rayas azules y blancas) */
 .background-pattern {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #007bff; /* Azul de las rayas */
+    background-color: #007bff;
     background-image:
         repeating-linear-gradient(
             45deg,
@@ -26,36 +26,35 @@ body {
             #fff 10px,
             #fff 20px
         );
-    opacity: 0.9; /* Un poco transparente para no ser tan dominante */
-    z-index: -1; /* Asegura que esté detrás del contenido */
-    transform: rotate(45deg) scale(2); /* Ajusta rotación y escala para cubrir bien */
+    opacity: 0.9;
+    z-index: -1;
+    transform: rotate(45deg) scale(2);
 }
 
-
 .container {
-    background-color: #c0c0c0; /* Gris del fondo del monitor */
-    border: 5px solid #000; /* Borde negro del monitor */
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.5); /* Sombra para darle profundidad */
+    background-color: #c0c0c0;
+    border: 5px solid #000;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
     width: 90%;
     max-width: 600px;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
     position: relative;
-    z-index: 1; /* Asegura que esté por encima del patrón de fondo */
-    color: #000; /* Color del texto por defecto */
-    outline: 2px solid #fff; /* Borde blanco interno */
+    z-index: 1;
+    color: #000;
+    outline: 2px solid #fff;
     outline-offset: -7px;
 }
 
 .header {
-    background-color: #404040; /* Gris oscuro de la barra superior */
+    background-color: #404040;
     color: #fff;
     padding: 10px;
     font-size: 1.3em;
     border-bottom: 2px solid #000;
     margin-bottom: 20px;
-    font-family: 'Press Start 2P', cursive; /* Fuente pixelada para el encabezado */
+    font-family: 'Press Start 2P', cursive;
     letter-spacing: 1px;
 }
 
@@ -67,46 +66,78 @@ body {
     line-height: 1.2;
 }
 
+/* --- DISEÑO DEL PERSONAJE (PURAMENTE CSS) --- */
 .police-character-area {
-    position: relative;
-    width: 200px; /* Ancho estimado para el personaje */
-    height: 200px; /* Altura estimada para el personaje */
+    width: 150px;
+    height: 200px;
     margin: 0 auto 20px auto;
     border: 2px solid #000;
-    background-color: #f0f0f0; /* Fondo del área del personaje */
+    background-color: #fffff0; /* Fondo del área */
+    position: relative;
     overflow: hidden;
     box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
 }
 
-.milhouse-placeholder img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.character-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.character-head {
+    width: 60px;
+    height: 70px;
+    background-color: #ffcc99; /* Color de piel */
+    border: 2px solid #000;
+    border-radius: 50% / 60%;
+    position: relative;
     margin: 0 auto;
+    z-index: 10;
+}
+
+.character-hat {
+    width: 80px;
+    height: 20px;
+    background-color: #007bff; /* Color del gorro de policía (azul) */
+    border: 2px solid #000;
+    border-bottom: none;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px 5px 0 0;
+    z-index: 11;
+}
+
+.character-body {
+    width: 80px;
+    height: 100px;
+    background-color: #007bff; /* Uniforme azul */
+    border: 2px solid #000;
+    border-top: none;
+    margin-top: -5px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
 }
 
 .taberna-gamer-logo {
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: #f00; /* Fondo rojo del logo */
+    background-color: #ff0000; /* Fondo rojo del logo */
     color: #fff;
-    font-size: 0.8em;
+    font-size: 0.6em;
     padding: 3px 5px;
     border: 1px solid #000;
     font-family: 'Press Start 2P', cursive;
     transform: rotate(5deg);
-    white-space: nowrap; /* Evita que el texto se rompa */
+    white-space: nowrap;
     box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    z-index: 20;
 }
 
-.taberna-gamer-logo img {
-    max-width: 80px; /* Ajusta el tamaño del logo */
-    height: auto;
-    display: block;
-}
-
-
+/* --- ESTILOS DE BOTONES Y MENSAJES (igual que antes) --- */
 .options {
     display: flex;
     justify-content: center;
@@ -147,7 +178,7 @@ body {
     content: '';
     width: 18px;
     height: 18px;
-    background-color: #000; /* El punto negro cuando está seleccionado */
+    background-color: #000;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -160,6 +191,6 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     color: #000;
-    min-height: 50px; /* Para que el espacio esté reservado */
+    min-height: 50px;
     padding-top: 10px;
 }
